@@ -13,3 +13,13 @@ public class Library {
         books.add(new Book("A Game of Thrones", "George R.R. Martin", 17.99, "Bantam Books", "9780553386790"));
         books.add(new Book("The Fellowship of the Ring", "J.R.R. Tolkien", 19.99, "William Morrow and Company", "9780547928210"));
     }
+
+    // Constructor with a given ArrayList of books
+    public Library(ArrayList<Book> books) {
+        this.books = new ArrayList<>(books);
+    }
+
+    // Copy constructor - creates a deep copy of another Library
+    public Library(Library other) {
+        this.books = new ArrayList<>(other.books);
+    }
