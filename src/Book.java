@@ -24,6 +24,24 @@ public class Book {
         this.isbn = "000-0-00-000000-0";
     }
 
+    // Constructor with all data members
+    public Book(String title, String author, double price, String publisher, String isbn) {
+        this.title = toTitleCase(title);
+        this.author = toTitleCase(author);
+        this.price = price;
+        this.publisher = toTitleCase(publisher);
+        this.isbn = isbn;
+    }
+
+    // Copy constructor
+    public Book(Book other) {
+        this.title = other.title;
+        this.author = other.author;
+        this.price = other.price;
+        this.publisher = other.publisher;
+        this.isbn = other.isbn;
+    }
+
     // Helper method to convert a string to title case
     private String toTitleCase(String input) {
         if (input == null || input.isEmpty()) return input;
