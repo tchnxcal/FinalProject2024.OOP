@@ -14,4 +14,14 @@ public class Book {
         this.publisher = "Unpublished";
         this.isbn = "000-0-00-000000-0"; // Example of a default invalid ISBN
     }
+
+    // Constructor with only title
+    public Book(String title) {
+        this.title = title;
+        this.author = "Unknown";
+        this.price = 0.0;
+        this.publisher = "Unpublished";
+        this.isbn = "000-0-00-000000-0";
+    }
 }
+
