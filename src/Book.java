@@ -76,6 +76,7 @@ public class Book implements Cloneable {
         }
     }
 
+    @Override
     public String toString() {
         return String.format(
                 "%-10s : %-20s\n%-10s : %-20s\n%-10s : %8.2f\n%-10s : %-20s\n%-10s : %-20s",
@@ -87,13 +88,11 @@ public class Book implements Cloneable {
         );
     }
 
+    @Override
     public boolean equals(Object obj) {
-        if (this == obj) // Check if the two references point to the same object
-            return true;
-        if (obj == null || getClass() != obj.getClass()) // Check for null and class type
-            return false;
-
-        Book other = (Book) obj; // Cast to Book
+        if (this == obj) return true; // Check if the same instance
+        if (obj == null || getClass() != obj.getClass()) return false; // Check for null or different class
+        Book other = (Book) obj;
         return this.title.equalsIgnoreCase(other.title) &&
                 this.author.equalsIgnoreCase(other.author) &&
                 this.price == other.price &&
@@ -101,6 +100,7 @@ public class Book implements Cloneable {
                 this.isbn.equals(other.isbn);
     }
 
+    @Override
     public Book clone() {
         try {
             return (Book) super.clone();
@@ -150,4 +150,5 @@ public class Book implements Cloneable {
         this.isbn = isbn;
     }
 }
+
 
