@@ -23,3 +23,24 @@ public class Library {
     public Library(Library other) {
         this.books = new ArrayList<>(other.books);
     }
+
+    // Method to search for a book by keyword in the title or author
+    public ArrayList<Book> searchBook(String keyword) {
+        ArrayList<Book> searchResults = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
+                    book.getAuthor().toLowerCase().contains(keyword.toLowerCase())) {
+                searchResults.add(book);
+            }
+        }
+        return searchResults;
+    }
+
+    // equals method to check if two Library instances are the same
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Library other = (Library) obj;
+        return this.books.equals(other.books);
+    }
