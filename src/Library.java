@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 
+/**
+ * Task #2
+ *
+ * @author: Nathan Angulo
+ */
+
 public class Library {
     // Data members
     private ArrayList<Book> books; // ArrayList of Book objects

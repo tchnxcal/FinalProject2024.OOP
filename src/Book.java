@@ -1,3 +1,9 @@
+/**
+ * Task #1
+ *
+ * @author: Nathan Angulo
+ */
+
 public class Book implements Cloneable {
     // Data members
     private String title;      // Book title, must be in title case
