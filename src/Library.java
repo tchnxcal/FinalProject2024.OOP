@@ -50,3 +50,25 @@ public class Library {
         Library other = (Library) obj;
         return this.books.equals(other.books);
     }
+
+    // toString method to display the entire contents of the library
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Library Contents:\n");
+        for (Book book : books) {
+            sb.append(book).append("\n");
+        }
+        return sb.toString();
+    }
+
+    // Getter for the ArrayList of books
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
+    // Setter for the ArrayList of books
+    public void setBooks(ArrayList<Book> books) {
+        this.books = books;
+    }
+}
