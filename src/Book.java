@@ -52,14 +52,15 @@ public class Book implements Cloneable {
     private String toTitleCase(String input) {
         if (input == null || input.isEmpty()) return input;
 
-        String[] words = input.toLowerCase().split(" ");
+        String[] words = input.split(" ");
         StringBuilder titleCase = new StringBuilder();
 
         for (String word : words) {
             if (!word.isEmpty()) {
+                // Only capitalize the first character, leave the rest as-is
                 titleCase.append(Character.toUpperCase(word.charAt(0)))
-                        .append(word.substring(1))
-                        .append(" ");
+                        .append(word.substring(1));
+                titleCase.append(" ");
             }
         }
         return titleCase.toString().trim();
@@ -85,10 +86,10 @@ public class Book implements Cloneable {
     @Override
     public String toString() {
         return String.format(
-                "%-10s : %-20s\n%-10s : %-20s\n%-10s : %8.2f\n%-10s : %-20s\n%-10s : %-20s",
+                "%-10s : %-25s\n%-10s : %-25s\n%-10s : $%s\n%-10s : %-25s\n%-10s : %-25s",
                 "Title", title,
                 "Author", author,
-                "Price", price,
+                "Price", String.format("%.2f", price), // No extra spaces added
                 "Publisher", publisher,
                 "ISBN", isbn
         );
