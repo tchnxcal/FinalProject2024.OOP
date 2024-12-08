@@ -76,5 +76,29 @@ public class Book {
         }
     }
 
-    
+    public String toString() {
+        return String.format(
+                "%-10s : %-20s\n%-10s : %-20s\n%-10s : %8.2f\n%-10s : %-20s\n%-10s : %-20s",
+                "Title", title,
+                "Author", author,
+                "Price", price,
+                "Publisher", publisher,
+                "ISBN", isbn
+        );
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) // Check if the two references point to the same object
+            return true;
+        if (obj == null || getClass() != obj.getClass()) // Check for null and class type
+            return false;
+
+        Book other = (Book) obj; // Cast to Book
+        return this.title.equalsIgnoreCase(other.title) &&
+                this.author.equalsIgnoreCase(other.author) &&
+                this.price == other.price &&
+                this.publisher.equalsIgnoreCase(other.publisher) &&
+                this.isbn.equals(other.isbn);
+    }
+}
 
