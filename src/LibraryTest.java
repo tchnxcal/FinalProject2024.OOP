@@ -21,8 +21,8 @@ public class LibraryTest {
         // Test 3: Create a custom library with a custom book list
         System.out.println("\nTest 3: Create a new Library with a custom ArrayList");
         ArrayList<Book> customBooks = new ArrayList<>();
-        customBooks.add(new Book("The Hobbit", "J.R.R. Tolkien", 12.99, "HarperCollins", "9780547928227"));
-        customBooks.add(new Book("To Kill a Mockingbird", "Harper Lee", 10.99, "J.B. Lippincott & Co.", "9780061120084"));
+        customBooks.add(new Book("The Hobbit", "J.R.R. Tolkien", 12.99, "HarperCollins", "9780261102217"));
+        customBooks.add(new Book("To Kill a Mockingbird", "Harper Lee", 17.99, "HarperCollins", "9780061120084"));
         Library customLibrary = new Library(customBooks);
         System.out.println(customLibrary);
 
