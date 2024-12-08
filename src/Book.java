@@ -1,4 +1,4 @@
-public class Book {
+public class Book implements Cloneable {
     // Data members
     private String title;      // Book title, must be in title case
     private String author;     // Author's name
@@ -99,6 +99,14 @@ public class Book {
                 this.price == other.price &&
                 this.publisher.equalsIgnoreCase(other.publisher) &&
                 this.isbn.equals(other.isbn);
+    }
+
+    public Book clone() {
+        try {
+            return (Book) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }
 
