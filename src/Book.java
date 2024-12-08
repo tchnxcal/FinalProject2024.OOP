@@ -108,5 +108,46 @@ public class Book implements Cloneable {
             throw new AssertionError();
         }
     }
+
+    // Getter and Setter Methods
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = toTitleCase(title);
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = toTitleCase(author);
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = toTitleCase(publisher);
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
 }
 
