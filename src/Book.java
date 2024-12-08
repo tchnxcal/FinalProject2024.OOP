@@ -57,5 +57,24 @@ public class Book {
             }
         }
         return titleCase.toString().trim();
-}
+    }
+
+    // Method to check ISBN status
+    public int checkIsbnStatus() {
+        if (isbn == null || isbn.isEmpty()) {
+            return -1; // Invalid ISBN
+        }
+
+        int length = isbn.replace("-", "").length();
+
+        if (length == 10) {
+            return 0; // ISBN10
+        } else if (length == 13) {
+            return 1; // ISBN13
+        } else {
+            return -1; // Invalid ISBN
+        }
+    }
+
+    
 
